@@ -1,0 +1,25 @@
+﻿table, td, th {    
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: auto;
+}
+th {
+    background-color: #8c8c8c;
+    color: white;
+    border-color: #8c8c8c;
+}
+th, td {
+    padding: 10px;
+}
+a{
+    text-decoration: underline;
+    color: blue;
+}
+b{
+    color: #8c8c8c;
+    text-transform: lowercase;
+}
