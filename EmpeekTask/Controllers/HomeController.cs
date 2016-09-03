@@ -6,19 +6,19 @@ namespace EmpeekTask.Controllers
 {
     public class HomeController : ApiController
     {
-        static Information information;
-        static bool flag;
+        Information information;
         // GET: api/Home
         [HttpGet]
         public List<string> Get()
         {
             information = new Information();
-            return Information.drivers;
+            return information.drivers;
         }
         
         [HttpPost]
         public Information GetFiles( MyPath path)
         {
+            information = new Information();
             string myPath = path.ToString();
             information.isFile = Information.Check(myPath);
             if (information.isFile)
@@ -26,11 +26,11 @@ namespace EmpeekTask.Controllers
             return information;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("api/Home/Counter")]
-        public int[] Counter()
+        public int[] Counter(MyPath path)
         {
-            return new Counter().Count(information.currentPath);
+            return new Counter().Count(path.ToString());
         }
 
 

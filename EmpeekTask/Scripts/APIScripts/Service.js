@@ -13,9 +13,10 @@
         });
     }
     var deferredAbort = $q.defer();
-    this.getCount = function () {
+    this.getCount = function (path) {
         return $http({
-            method: 'get',
+            method: 'post',
+            data: path,
             url: 'api/Home/Counter',
             timeout: deferredAbort.promise
         });

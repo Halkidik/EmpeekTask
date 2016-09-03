@@ -25,10 +25,9 @@
                 APIService.abort();
 
             if ($scope.dots && $scope.isFile) {
-                search = APIService.getCount()
+                search = APIService.getCount(path)
                 $scope.count = ["Waiting", "Waiting", "Waiting"];
                 search.then(function (result1) {
-                    console.log(result1.data)
                     $scope.count = result1.data;
 
                 })

@@ -9,14 +9,13 @@ namespace EmpeekTask.Models
     {
         public  string currentPath { get; set; }
         public  List<string> currentFiles { get; set; }
-        static public List<string> drivers { get; set; }
+         public List<string> drivers { get; set; }
 
         public bool Dots;
         public bool isFile;
 
         public Information()
         {
-            currentFiles = new List<string>();
             drivers = new List<string>();
             GetDrivers();
             Dots = false;
@@ -42,6 +41,7 @@ namespace EmpeekTask.Models
         }
         public void GetCurrentFiles(string path)
         {
+            currentFiles = new List<string>();
             currentPath = path;
             if (path == "")
             {
